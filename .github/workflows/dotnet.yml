@@ -20,9 +20,22 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+        
     - name: Restore dependencies
       run: dotnet restore src/DemoCleanArchitecture/DemoCleanArchitecture.sln
+      
     - name: Build
       run: dotnet build src/DemoCleanArchitecture/DemoCleanArchitecture.sln --no-restore
+      
     - name: Test
       run: dotnet test src/DemoCleanArchitecture/DemoCleanArchitecture.Tests/DemoCleanArchitecture.Tests.csproj --no-build --verbosity normal
+      
+    - name: Notify team on failure
+      if: failure()
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        slack-message: 'Build falhou na branch: ${{ github.ref }}'
+        slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    - name: Code Quality Check
+      run: dotnet format --verify-no-changes

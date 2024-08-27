@@ -1,5 +1,5 @@
 # DemoCleanArchitecture
-Uso do Clean-Arquitecture com um CRUD simples
+IUso do Clean-Arquitecture com um CRUD simples
 
 ## <a name="Migration"></a> Migration
 ### Powershell

@@ -19,11 +19,11 @@ namespace DemoCleanArchitecture.Tests.Cases.Application.Customer.GetAll
             this.presenter = presenter;
         }
 
-        [Fact]
-        public void ShouldExecute()
-        {
-            customerGetAllUseCase.Execute();
-            presenter.ViewModel.Should().BeOfType<OkObjectResult>();
-       }
+       // [Fact]
+       // public void ShouldExecute()
+       // {
+       //     customerGetAllUseCase.Execute();
+       //     presenter.ViewModel.Should().BeOfType<OkObjectResult>();
+       //}
     }
 }

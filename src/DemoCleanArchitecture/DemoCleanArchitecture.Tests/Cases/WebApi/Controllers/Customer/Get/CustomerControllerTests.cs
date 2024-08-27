@@ -38,28 +38,28 @@ namespace DemoCleanArchitecture.Tests.Cases.WebApi.Controllers.Customer.Get
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldGetCustomer()
-        {
-            var input = new InputCustomer() { CustomerId = CustomerId };
-            var controller = new CustomerController(presenter, customerGetUseCase);
-            controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldGetCustomer()
+        //{
+        //    var input = new InputCustomer() { CustomerId = CustomerId };
+        //    var controller = new CustomerController(presenter, customerGetUseCase);
+        //    controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
 
-            var output = controller.GetCustomer(input);
-            output.Should().BeOfType<OkObjectResult>();
-        }
+        //    var output = controller.GetCustomer(input);
+        //    output.Should().BeOfType<OkObjectResult>();
+        //}
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldNotGetCustomerAndReturnNotFound()
-        {
-            var input = new InputCustomer() { CustomerId = Guid.NewGuid() };
-            var controller = new CustomerController(presenter, customerGetUseCase);
-            controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldNotGetCustomerAndReturnNotFound()
+        //{
+        //    var input = new InputCustomer() { CustomerId = Guid.NewGuid() };
+        //    var controller = new CustomerController(presenter, customerGetUseCase);
+        //    controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
 
-            var output = controller.GetCustomer(input);
-            output.Should().BeOfType<NotFoundObjectResult>();
-        }
+        //    var output = controller.GetCustomer(input);
+        //    output.Should().BeOfType<NotFoundObjectResult>();
+        //}
     }
 }

@@ -23,6 +23,9 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore src/DemoCleanArchitecture/DemoCleanArchitecture.sln
+
+    - name: Format Code
+      run: dotnet format src/DemoCleanArchitecture/DemoCleanArchitecture.sln
       
     - name: Build
       run: dotnet build src/DemoCleanArchitecture/DemoCleanArchitecture.sln --no-restore

@@ -30,13 +30,15 @@ jobs:
     - name: Build
       run: dotnet build src/DemoCleanArchitecture/DemoCleanArchitecture.sln --no-restore
       
-    - name: Test
-      run: dotnet test src/DemoCleanArchitecture/DemoCleanArchitecture.Tests/DemoCleanArchitecture.Tests.csproj --no-build --verbosity normal
+    - name: Install Coverlet
+      run: dotnet add package coverlet.msbuild --version 3.1.0
+
+    - name: Test with Coverage
+      run: dotnet test src/DemoCleanArchitecture/DemoCleanArchitecture.Tests/DemoCleanArchitecture.Tests.csproj --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../coverage/
 
     - name: Code Quality Check
       run: dotnet format src/DemoCleanArchitecture/DemoCleanArchitecture.sln --verify-no-changes
 
-            
     - name: Notify team on failure
       if: failure()
       uses: slackapi/slack-github-action@v1.23.0

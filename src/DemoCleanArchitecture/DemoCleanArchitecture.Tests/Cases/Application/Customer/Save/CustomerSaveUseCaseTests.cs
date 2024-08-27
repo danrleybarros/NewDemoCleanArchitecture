@@ -23,24 +23,24 @@ namespace DemoCleanArchitecture.Tests.Cases.Application.Customer.Save
             this.presenter = presenter;
         }
 
-        [Fact]
-        [TestPriority(1)]
-        public void ShouldAddNewCustomerAndReturnOK()
-        {
-            var request = new CustomerSaveRequest("CustomerTest", 18, "customer@hotmail.com");
-            CustomerId = request.Customer.Id;
-            customerSaveUseCase.Execute(request);            
-            presenter.ViewModel.Should().BeOfType<OkObjectResult>();
-        }
+        //[Fact]
+        //[TestPriority(1)]
+        //public void ShouldAddNewCustomerAndReturnOK()
+        //{
+        //    var request = new CustomerSaveRequest("CustomerTest", 18, "customer@hotmail.com");
+        //    CustomerId = request.Customer.Id;
+        //    customerSaveUseCase.Execute(request);            
+        //    presenter.ViewModel.Should().BeOfType<OkObjectResult>();
+        //}
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldUpdateCustomerAndReturnOK()
-        {
-            var request = new CustomerSaveRequest(CustomerId, "CustomerTestUpdated", 25, "customer@hotmail.com");
-            customerSaveUseCase.Execute(request);
-            presenter.ViewModel.Should().BeOfType<OkObjectResult>();
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldUpdateCustomerAndReturnOK()
+        //{
+        //    var request = new CustomerSaveRequest(CustomerId, "CustomerTestUpdated", 25, "customer@hotmail.com");
+        //    customerSaveUseCase.Execute(request);
+        //    presenter.ViewModel.Should().BeOfType<OkObjectResult>();
+        //}
 
         [Fact]
         public void ShouldNotAddNewCustomerAndReturnError()

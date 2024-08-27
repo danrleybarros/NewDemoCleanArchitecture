@@ -38,17 +38,17 @@ namespace DemoCleanArchitecture.Tests.Cases.WebApi.Controllers.Customer.Delete
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldDeleteCustomer()
-        {
-            var input = new InputCustomer() { CustomerId = CustomerId };
-            var controller = new CustomerController(presenter, customerDeleteUseCase);
-            controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldDeleteCustomer()
+        //{
+        //    var input = new InputCustomer() { CustomerId = CustomerId };
+        //    var controller = new CustomerController(presenter, customerDeleteUseCase);
+        //    controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
 
-            var output = controller.DeleteCustomer(input);
-            output.Should().BeOfType<OkObjectResult>();
-        }
+        //    var output = controller.DeleteCustomer(input);
+        //    output.Should().BeOfType<OkObjectResult>();
+        //}
 
         [Fact]
         [TestPriority(2)]

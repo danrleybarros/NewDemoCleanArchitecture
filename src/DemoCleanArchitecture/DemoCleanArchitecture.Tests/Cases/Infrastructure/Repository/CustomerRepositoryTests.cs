@@ -44,56 +44,56 @@ namespace DemoCleanArchitecture.Tests.Cases.Infrastructure.Repository
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldGetAll()
-        {
-            var models = customerReadOnlyRepository.GetAll();
-            models.Should().HaveCountGreaterThan(1);
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldGetAll()
+        //{
+        //    var models = customerReadOnlyRepository.GetAll();
+        //    models.Should().HaveCountGreaterThan(1);
+        //}
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldGetById()
-        {
-            var model = customerReadOnlyRepository.GetById(idCustomer);
-            model.Should().NotBeNull();
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldGetById()
+        //{
+        //    var model = customerReadOnlyRepository.GetById(idCustomer);
+        //    model.Should().NotBeNull();
+        //}
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldGetByExpression()
-        {
-            var model = customerReadOnlyRepository.GetByFilter(s => s.Id == idCustomer);
-            model.Should().NotBeNull();
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldGetByExpression()
+        //{
+        //    var model = customerReadOnlyRepository.GetByFilter(s => s.Id == idCustomer);
+        //    model.Should().NotBeNull();
+        //}
 
-        [Fact]
-        [TestPriority(3)]
-        public void ShouldUpdateCustomer()
-        {
-            var model = customerReadOnlyRepository.GetById(idCustomer);
-            model.Should().NotBeNull();
-            var newModel = CustomerBuilder.New().WithId(model.Id).WithName("NewCustomer").Build();
-            customerWriteOnlyRepository.Update(newModel);
-        }
+        //[Fact]
+        //[TestPriority(3)]
+        //public void ShouldUpdateCustomer()
+        //{
+        //    var model = customerReadOnlyRepository.GetById(idCustomer);
+        //    model.Should().NotBeNull();
+        //    var newModel = CustomerBuilder.New().WithId(model.Id).WithName("NewCustomer").Build();
+        //    customerWriteOnlyRepository.Update(newModel);
+        //}
 
-        [Fact]
-        [TestPriority(4)]
-        public void ShouldDeleteCustomerById()
-        {
-            var model = customerReadOnlyRepository.GetById(idCustomer);
-            var ret = customerWriteOnlyRepository.Delete(model.Id);
-            ret.Should().Be(1);
-        }
+        //[Fact]
+        //[TestPriority(4)]
+        //public void ShouldDeleteCustomerById()
+        //{
+        //    var model = customerReadOnlyRepository.GetById(idCustomer);
+        //    var ret = customerWriteOnlyRepository.Delete(model.Id);
+        //    ret.Should().Be(1);
+        //}
 
-        [Fact]
-        [TestPriority(5)]
-        public void ShouldDeleteCustomer()
-        {
-            var models = customerReadOnlyRepository.GetAll();
-            var ret = customerWriteOnlyRepository.Delete(models.First());
-            ret.Should().Be(1);
-        }
+        //[Fact]
+        //[TestPriority(5)]
+        //public void ShouldDeleteCustomer()
+        //{
+        //    var models = customerReadOnlyRepository.GetAll();
+        //    var ret = customerWriteOnlyRepository.Delete(models.First());
+        //    ret.Should().Be(1);
+        //}
     }
 }

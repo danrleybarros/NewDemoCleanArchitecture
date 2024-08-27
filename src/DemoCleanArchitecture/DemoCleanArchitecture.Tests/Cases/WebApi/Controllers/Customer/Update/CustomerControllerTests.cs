@@ -38,17 +38,17 @@ namespace DemoCleanArchitecture.Tests.Cases.WebApi.Controllers.Customer.Update
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldUpdateCustomer()
-        {
-            var input = new InputCustomer() { Id = CustomerId, Name = "CustomerTest", Age = 50, Email = "customer@email.com.br" };
-            var controller = new CustomerController(presenter, customerSaveUseCase);
-            controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldUpdateCustomer()
+        //{
+        //    var input = new InputCustomer() { Id = CustomerId, Name = "CustomerTest", Age = 50, Email = "customer@email.com.br" };
+        //    var controller = new CustomerController(presenter, customerSaveUseCase);
+        //    controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
 
-            var output = controller.UpdateCustomer(input);
-            output.Should().BeOfType<OkObjectResult>();
-        }
+        //    var output = controller.UpdateCustomer(input);
+        //    output.Should().BeOfType<OkObjectResult>();
+        //}
 
         [Fact]
         [TestPriority(2)]

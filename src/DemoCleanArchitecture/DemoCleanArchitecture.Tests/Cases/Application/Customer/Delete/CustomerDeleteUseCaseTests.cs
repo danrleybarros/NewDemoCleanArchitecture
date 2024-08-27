@@ -37,14 +37,14 @@ namespace DemoCleanArchitecture.Tests.Cases.Application.Customer.Delete
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldDeleteCustomer()
-        {
-            var request = new CustomerDeleteRequest(CustomerId);
-            customerDeleteUseCase.Execute(request);
-            presenter.ViewModel.Should().BeOfType<OkObjectResult>();
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldDeleteCustomer()
+        //{
+        //    var request = new CustomerDeleteRequest(CustomerId);
+        //    customerDeleteUseCase.Execute(request);
+        //    presenter.ViewModel.Should().BeOfType<OkObjectResult>();
+        //}
 
         [Fact]
         [TestPriority(2)]

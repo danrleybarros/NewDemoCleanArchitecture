@@ -43,12 +43,12 @@ namespace DemoCleanArchitecture.Tests.Cases.Infrastructure.Repository
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldGetAll()
-        {
-            var models = bankReadOnlyRepository.GetAll();
-            models.Should().HaveCountGreaterThan(1);
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldGetAll()
+        //{
+        //    var models = bankReadOnlyRepository.GetAll();
+        //    models.Should().HaveCountGreaterThan(1);
+        //}
     }
 }

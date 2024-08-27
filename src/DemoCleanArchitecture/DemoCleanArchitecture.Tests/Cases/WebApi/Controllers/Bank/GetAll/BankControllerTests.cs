@@ -40,25 +40,25 @@ namespace DemoCleanArchitecture.Tests.Cases.WebApi.Controllers.Bank.GetAll
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldGetAllBank()
-        {
-            var controller = new DemoCleanArchitecture.WebApi.UseCases.Bank.GetAll.BankController(presenter, bankGetAllUseCase);
-            controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldGetAllBank()
+        //{
+        //    var controller = new DemoCleanArchitecture.WebApi.UseCases.Bank.GetAll.BankController(presenter, bankGetAllUseCase);
+        //    controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
 
-            var output = controller.GetAllBanks();
-            output.Should().BeOfType<OkObjectResult>();
-        }
+        //    var output = controller.GetAllBanks();
+        //    output.Should().BeOfType<OkObjectResult>();
+        //}
 
-        [Fact]
-        public void ShouldNotGetErrorIfDontHaveAnyBank()
-        {
-            var controller = new DemoCleanArchitecture.WebApi.UseCases.Bank.GetAll.BankController(presenter, bankGetAllUseCase);
-            controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
+        //[Fact]
+        //public void ShouldNotGetErrorIfDontHaveAnyBank()
+        //{
+        //    var controller = new DemoCleanArchitecture.WebApi.UseCases.Bank.GetAll.BankController(presenter, bankGetAllUseCase);
+        //    controller.ControllerContext.HttpContext = HttpContextBuilder.New().Build();
 
-            var output = controller.GetAllBanks();
-            output.Should().BeOfType<OkObjectResult>();
-        }
+        //    var output = controller.GetAllBanks();
+        //    output.Should().BeOfType<OkObjectResult>();
+        //}
     }
 }

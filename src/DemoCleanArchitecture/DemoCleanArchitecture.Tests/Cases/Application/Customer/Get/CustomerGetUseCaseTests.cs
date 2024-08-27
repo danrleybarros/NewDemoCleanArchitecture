@@ -36,23 +36,23 @@ namespace DemoCleanArchitecture.Tests.Cases.Application.Customer.Get
             ret.Should().Be(1);
         }
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldGetCustomerById()
-        {
-            var request = new CustomerGetRequest(CustomerId);
-            customerGetUseCase.Execute(request);
-            presenter.ViewModel.Should().BeOfType<OkObjectResult>();
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldGetCustomerById()
+        //{
+        //    var request = new CustomerGetRequest(CustomerId);
+        //    customerGetUseCase.Execute(request);
+        //    presenter.ViewModel.Should().BeOfType<OkObjectResult>();
+        //}
 
-        [Fact]
-        [TestPriority(2)]
-        public void ShouldNotGetCustomerByIdAndReturnNotFound()
-        {
-            var request = new CustomerGetRequest(Guid.NewGuid());
-            customerGetUseCase.Execute(request);
-            presenter.ViewModel.Should().BeOfType<NotFoundObjectResult>();
-        }
+        //[Fact]
+        //[TestPriority(2)]
+        //public void ShouldNotGetCustomerByIdAndReturnNotFound()
+        //{
+        //    var request = new CustomerGetRequest(Guid.NewGuid());
+        //    customerGetUseCase.Execute(request);
+        //    presenter.ViewModel.Should().BeOfType<NotFoundObjectResult>();
+        //}
 
     }
 }

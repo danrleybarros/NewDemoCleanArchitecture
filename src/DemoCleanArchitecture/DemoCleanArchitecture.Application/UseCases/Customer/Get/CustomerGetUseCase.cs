@@ -20,6 +20,7 @@ namespace DemoCleanArchitecture.Application.UseCases.Customer.Get
             try
             {
                 var customer = customerReadOnlyRepository.GetById(request.CustomerId);
+                var algo
                 if (customer == null)
                 {
                     output.NotFound($"Not found customer with id: {request.CustomerId}");
